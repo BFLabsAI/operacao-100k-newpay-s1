@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação 100K | Roadmap Estratégico NewPay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #4f46e5;
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+        }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 2.5rem;
+            bottom: -2.5rem;
+            width: 2px;
+            background-color: #e5e7eb;
+            z-index: 0;
+        }
+        .roadmap-item:last-child::before {
+            display: none;
+        }
+        .roadmap-icon {
+            background-color: white;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- Cabeçalho -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black gradient-text">Operação 100K</h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-2">Roadmap & Planejamento Estratégico | Grupo NewPay</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-8">
+                <!-- 1) Contexto -->
+                <section id="contexto" class="section-card p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="ph-bold ph-strategy text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">1. Contexto — Base Estratégica</h2>
+                    </div>
+                    <ul class="space-y-3 text-gray-700 list-inside">
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-green-500 mt-1"></i><span><strong>NewPay:</strong> Revendedora de produtos financeiros com foco em soluções de pagamento.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-green-500 mt-1"></i><span><strong>Oportunidade:</strong> Pivotar para um ecossistema (Marketplace + Notícias + Cupons) para gerar leads e novas receitas.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-green-500 mt-1"></i><span><strong>Braço Adicional:</strong> Serviços de tecnologia e agência de marketing (IA, automação, etc.).</span></li>
+                    </ul>
+                </section>
+
+                <!-- 4) Modelos de Receita -->
+                <section id="receita" class="section-card p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="ph-bold ph-currency-dollar text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">4. Modelos de Receita</h2>
+                    </div>
+                    <div x-data="{ tab: 'recorrente' }" class="w-full">
+                        <div class="flex flex-wrap justify-center gap-2 mb-6">
+                            <button @click="tab = 'recorrente'" :class="{ 'active': tab === 'recorrente' }" class="tab-button font-semibold py-2 px-4 rounded-full">✅ Recorrente (MRR)</button>
+                            <button @click="tab = 'pontual'" :class="{ 'active': tab === 'pontual' }" class="tab-button font-semibold py-2 px-4 rounded-full">⚡️ Serviços Pontuais</button>
+                            <button @click="tab = 'estrategico'" :class="{ 'active': tab === 'estrategico' }" class="tab-button font-semibold py-2 px-4 rounded-full">🏆 Projetos Estratégicos</button>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <div x-show="tab === 'recorrente'">
+                                <h3 class="font-bold text-lg mb-2">Receita Recorrente Mensal (MRR)</h3>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>Assinaturas de Plataforma (vitrine, cupons).</li>
+                                    <li>Planos Mensais de Social Media.</li>
+                                    <li>Gestão de Tráfego Pago.</li>
+                                    <li>Manutenção de Sites e Sistemas.</li>
+                                </ul>
+                            </div>
+                            <div x-show="tab === 'pontual'" style="display: none;">
+                                <h3 class="font-bold text-lg mb-2">Serviços Pontuais</h3>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>Packs de vídeo, reels, posts avulsos.</li>
+                                    <li>Filmagens institucionais e cobertura de eventos.</li>
+                                    <li>Identidade visual (logo, kit de marca).</li>
+                                    <li>Landing pages, sites, cardápios digitais.</li>
+                                </ul>
+                            </div>
+                            <div x-show="tab === 'estrategico'" style="display: none;">
+                                <h3 class="font-bold text-lg mb-2">Projetos Estratégicos</h3>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>BI, automações robustas e integrações.</li>
+                                    <li>Bots e Agentes de IA customizados.</li>
+                                    <li>Desenvolvimento de produtos sob demanda.</li>
+                                    <li>Parcerias com co-investimento ou spin-offs.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 5) Produtos & Serviços -->
+                <section id="produtos" class="section-card p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="ph-bold ph-package text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">5. Produtos & Serviços</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg mb-2 flex items-center gap-2"><i class="ph-bold ph-code"></i>Tecnologia</h3>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>BI (Dashboards)</li>
+                                <li>Integrações e Automações</li>
+                                <li>Sites e Landing Pages</li>
+                                <li>Bots e Agentes de IA</li>
+                                <li>Cardápio Digital</li>
+                            </ul>
+                        </div>
+                        <div class="bg-pink-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg mb-2 flex items-center gap-2"><i class="ph-bold ph-megaphone-simple"></i>Marketing</h3>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>Social Media (Posts, Reels)</li>
+                                <li>Videomaker (Institucional, Eventos)</li>
+                                <li>Tráfego Pago</li>
+                                <li>Identidade Visual</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6) Planos de Social Media -->
+                <section id="planos" class="section-card p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="ph-bold ph-notebook text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">6. Planos de Social Media (MRR)</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <!-- Plano Básico -->
+                        <div class="border border-gray-200 rounded-xl p-6 transform hover:scale-105 transition-transform">
+                            <h3 class="font-bold text-xl">Básico</h3>
+                            <p class="text-gray-500 text-sm">3 posts/semana</p>
+                            <div class="my-4">
+                                <span class="text-4xl font-extrabold">R$ 700</span>
+                                <span class="text-gray-500">/mês</span>
+                            </div>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>2 Posts Estáticos</li>
+                                <li>1 Reel</li>
+                                <li class="text-sm">(R$ 600 sem vídeo)</li>
+                            </ul>
+                        </div>
+                        <!-- Plano Intermediário -->
+                        <div class="border-2 border-indigo-600 rounded-xl p-6 transform hover:scale-105 transition-transform relative">
+                            <span class="absolute top-0 -translate-y-1/2 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">MAIS POPULAR</span>
+                            <h3 class="font-bold text-xl text-indigo-600">Intermediário</h3>
+                            <p class="text-gray-500 text-sm">Conteúdo + Mídia</p>
+                            <div class="my-4">
+                                <span class="text-4xl font-extrabold text-indigo-600">R$ 1.000</span>
+                                <span class="text-gray-500">/mês</span>
+                            </div>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>Plano Básico</li>
+                                <li>+ Gestão de Tráfego</li>
+                                <li class="text-sm">(Varia até R$ 1.400)</li>
+                            </ul>
+                        </div>
+                        <!-- Plano Avançado -->
+                        <div class="border border-gray-200 rounded-xl p-6 transform hover:scale-105 transition-transform">
+                            <h3 class="font-bold text-xl">Avançado</h3>
+                            <p class="text-gray-500 text-sm">Mais Conteúdo</p>
+                            <div class="my-4">
+                                <span class="text-4xl font-extrabold">R$ 1.800</span>
+                                <span class="text-gray-500">/mês</span>
+                            </div>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>Plano Intermediário</li>
+                                <li>+ 2-3 Reels/semana</li>
+                                <li>+ Posts extras</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                 <!-- 7) Serviços Pontuais -->
+                <section id="servicos_pontuais" class="section-card p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="ph-bold ph-rocket-launch text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">7. Serviços Pontuais & Projetos</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-gray-50 rounded-lg p-4"><strong>Pack de Vídeo:</strong> R$ 400–700</div>
+                        <div class="bg-gray-50 rounded-lg p-4"><strong>Identidade Visual:</strong> R$ 300–1.000</div>
+                        <div class="bg-gray-50 rounded-lg p-4"><strong>Landing Page:</strong> R$ 500–700</div>
+                        <div class="bg-gray-50 rounded-lg p-4"><strong>Site Institucional:</strong> R$ 1.500–3.000</div>
+                        <div class="bg-gray-50 rounded-lg p-4"><strong>Loja Virtual:</strong> a partir de R$ 4.000</div>
+                        <div class="bg-gray-50 rounded-lg p-4"><strong>Cardápio Digital:</strong> R$ 700</div>
+                        <div class="bg-indigo-100 text-indigo-800 rounded-lg p-4 font-bold"><strong>Integrações:</strong> Setup R$ 1k + R$ 250/mês</div>
+                        <div class="bg-indigo-100 text-indigo-800 rounded-lg p-4 font-bold col-span-1 sm:col-span-2 lg:col-span-3"><strong>Agente de IA:</strong> Setup R$ 4-5k + Mensalidade R$ 1-2k/mês</div>
+                    </div>
+                </section>
+
+                <!-- 8) ICP -->
+                <section id="icp" class="section-card p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="ph-bold ph-user-focus text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">8. Perfil de Cliente Ideal (ICP)</h2>
+                    </div>
+                    <div class="space-y-4">
+                        <p>A base de clientes atual é o modelo para a expansão. O foco é vender primeiro para a base ativa e depois replicar o perfil para prospecção externa.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold">Faturamento</h4>
+                                <p>Concentração entre R$ 20k–40k/mês.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold">Segmentos</h4>
+                                <p>Clínicas, moda, eletrônicos, farmácias, etc.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg md:col-span-2">
+                                <h4 class="font-bold">Praças</h4>
+                                <p>Mombaça, Iguatu, Quixadá, Quixeramobim, Acopiara.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="lg:col-span-1 space-y-8">
+                <!-- 2) Estrutura -->
+                <section id="estrutura" class="section-card p-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="ph-bold ph-users-three text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">2. Estrutura</h2>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold">Netinho</h3>
+                            <p class="text-sm text-gray-600">CEO & Fundador (Vendas, Gestão)</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Kaique</h3>
+                            <p class="text-sm text-gray-600">Videomaker / Social Media</p>
+                        </div>
+                        <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 rounded-r-lg">
+                            <p class="font-bold">⚠️ Ponto Crítico</p>
+                            <p class="text-sm">Buscar novo HEAD de Tecnologia ou parceiro tech para liderar a plataforma.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3) Custos -->
+                <section id="custos" class="section-card p-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="ph-bold ph-wallet text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">3. Custos Fixos</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between items-center"><span><i class="ph-fill ph-user-gear text-gray-500 mr-2"></i>Freelancer</span> <span class="font-bold">R$ 500–700/mês</span></li>
+                        <li class="flex justify-between items-center"><span><i class="ph-fill ph-wrench text-gray-500 mr-2"></i>Ferramentas</span> <span class="font-bold">R$ 300–400/mês</span></li>
+                        <li class="flex justify-between items-center text-green-600"><span><i class="ph-fill ph-globe text-green-500 mr-2"></i>Domínio/Infra</span> <span class="font-bold">ATIVO</span></li>
+                    </ul>
+                </section>
+
+                <!-- 9) Canais -->
+                <section id="canais" class="section-card p-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="ph-bold ph-path text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">9. Estratégia de Canal</h2>
+                    </div>
+                    <ul class="space-y-3 list-inside">
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-arrow-up-right text-green-500 mt-1"></i><span><strong>Upsell na Base:</strong> Atacar a base de clientes própria com as novas ofertas.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-handshake text-green-500 mt-1"></i><span><strong>Networking Externo:</strong> Pitch consultivo e parcerias locais.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-buildings text-green-500 mt-1"></i><span><strong>Presencial:</strong> Abordagem direta onde fizer sentido.</span></li>
+                    </ul>
+                </section>
+
+                <!-- 10) Roadmap Imediato -->
+                <section id="roadmap" class="section-card p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="ph-bold ph-traffic-signal text-4xl text-indigo-600"></i>
+                        <h2 class="text-2xl font-bold">10. Roadmap Imediato</h2>
+                    </div>
+                    <div class="relative space-y-10">
+                        <div class="roadmap-item relative pl-10">
+                            <div class="roadmap-icon absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-white border-2 border-indigo-500 rounded-full">
+                                <span class="font-bold text-indigo-500">1</span>
+                            </div>
+                            <h4 class="font-bold">Contratar Head de Tech</h4>
+                            <p class="text-sm text-gray-600">Definir liderança técnica ou parceria estratégica.</p>
+                        </div>
+                        <div class="roadmap-item relative pl-10">
+                            <div class="roadmap-icon absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-white border-2 border-indigo-500 rounded-full">
+                                <span class="font-bold text-indigo-500">2</span>
+                            </div>
+                            <h4 class="font-bold">Organizar Pacotes</h4>
+                            <p class="text-sm text-gray-600">Criar propostas comerciais prontas.</p>
+                        </div>
+                        <div class="roadmap-item relative pl-10">
+                            <div class="roadmap-icon absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-white border-2 border-indigo-500 rounded-full">
+                                <span class="font-bold text-indigo-500">3</span>
+                            </div>
+                            <h4 class="font-bold">Lançar MVP do Ecossistema</h4>
+                            <p class="text-sm text-gray-600">Marketplace + Portal de Notícias.</p>
+                        </div>
+                        <div class="roadmap-item relative pl-10">
+                             <div class="roadmap-icon absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-white border-2 border-indigo-500 rounded-full">
+                                <span class="font-bold text-indigo-500">4</span>
+                            </div>
+                            <h4 class="font-bold">Vender MRR na Base</h4>
+                            <p class="text-sm text-gray-600">Focar em Social Media e Tráfego Pago.</p>
+                        </div>
+                         <div class="roadmap-item relative pl-10">
+                             <div class="roadmap-icon absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-white border-2 border-indigo-500 rounded-full">
+                                <span class="font-bold text-indigo-500">5</span>
+                            </div>
+                            <h4 class="font-bold">Rodar Pilotos Tech</h4>
+                            <p class="text-sm text-gray-600">Testar projetos de BI, IA e automação.</p>
+                        </div>
+                        <div class="roadmap-item relative pl-10">
+                            <div class="roadmap-icon absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-white border-2 border-gray-300 rounded-full">
+                                <i class="ph-bold ph-chart-line-up text-gray-400"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-500">Medir e Escalar</h4>
+                            <p class="text-sm text-gray-500">Analisar Churn, LTV, CAC e expandir.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>Documento gerado como ferramenta de apoio estratégico para o Grupo NewPay.</p>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</body>
+</html>
